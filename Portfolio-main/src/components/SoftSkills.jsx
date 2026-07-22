@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { softSkillsList } from '../data/portfolioData';
 
 const SoftSkillCard = ({ skill, index }) => (
@@ -22,8 +22,10 @@ const SoftSkillCard = ({ skill, index }) => (
 );
 
 const SoftSkills = () => {
+  const [showAll, setShowAll] = useState(false);
+
   return (
-    <section className="bg-white pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:60px_60px]">
+    <section id="softskills" className="bg-white pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:60px_60px]">
       
       {/* Top paper divider (torn SVG transition from dark section) */}
       <div className="absolute top-0 left-0 w-full pointer-events-none z-10 transform -translate-y-[1px] rotate-180">
@@ -49,10 +51,24 @@ const SoftSkills = () => {
 
         {/* Soft Skills Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {softSkillsList.map((skill, index) => (
+          {softSkillsList.slice(0, showAll ? softSkillsList.length : 4).map((skill, index) => (
             <SoftSkillCard key={skill.name} skill={skill} index={index} />
           ))}
         </div>
+
+        {softSkillsList.length > 4 && (
+          <div className="mt-10 flex justify-center">
+            <button
+              onClick={() => setShowAll((prev) => !prev)}
+              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#ff2a2a] text-white font-bold text-base hover:bg-red-600 shadow-[0_15px_35px_rgba(255,42,42,0.25)] transition-all duration-300"
+            >
+              {showAll ? 'Show Less' : 'Show More'}
+              <svg className={`w-4 h-4 transition-transform ${showAll ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

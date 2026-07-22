@@ -161,7 +161,11 @@ export const softSkillsList = [
   { name: "Problem-Solving", icon: "🧩", desc: "Breaking down complex engineering tasks into clean, logical, and modular pieces." },
   { name: "Team Player", icon: "🤝", desc: "Collaborating effectively across teams to build successful full-stack projects." },
   { name: "Adaptability", icon: "🌟", desc: "Quick to pick up new frameworks, tools, and technical environments." },
-  { name: "Active Listener", icon: "👂", desc: "Listening attentively to team members and stakeholders to understand needs and execute projects precisely." }
+  { name: "Active Listener", icon: "👂", desc: "Listening attentively to team members and stakeholders to understand needs and execute projects precisely." },
+  { name: "Communication", icon: "💬", desc: "Explaining ideas clearly, giving feedback, and keeping stakeholders aligned." },
+  { name: "Time Management", icon: "⏱️", desc: "Organizing tasks, meeting deadlines, and balancing multiple priorities effectively." },
+  { name: "Creative Thinking", icon: "🎨", desc: "Finding innovative solutions to problems and improving user experiences with fresh ideas." },
+  { name: "Leadership", icon: "🏆", desc: "Motivating teams, guiding decisions, and taking ownership of project outcomes." }
 ];
 
 export const projects = [

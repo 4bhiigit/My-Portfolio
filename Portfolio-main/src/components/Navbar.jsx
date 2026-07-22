@@ -18,7 +18,17 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const navLinks = [
+    { label: 'Home', target: 'home' },
+    { label: 'About', target: 'about' },
+    { label: 'Expertise', target: 'skills' },
+    { label: 'Projects', target: 'projects' },
+    { label: 'Experience', target: 'experience' },
+    { label: 'Activities', target: 'activities' },
+    { label: 'Certificates', target: 'certificates' },
+    { label: 'Softskills', target: 'softskills' },
+    { label: 'Contact', target: 'contact' },
+  ];
 
   const hireMeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.emails.primary}&su=${encodeURIComponent('Hiring Inquiry – Portfolio')}&body=${encodeURIComponent('Hello Abhishek,\n\nI came across your portfolio and would like to discuss an opportunity with you.\n\nLooking forward to hearing from you.\n\nBest Regards,')}`;
 
@@ -45,11 +55,11 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
             <a 
-              key={link} 
-              href={`#${link.toLowerCase()}`}
+              key={link.target} 
+              href={`#${link.target}`}
               className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
             >
-              {link}
+              {link.label}
               {/* Smooth hover underline */}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -94,12 +104,12 @@ const Navbar = () => {
         <div className="flex flex-col px-6 space-y-4">
           {navLinks.map((link) => (
             <a 
-              key={link} 
-              href={`#${link.toLowerCase()}`}
+              key={link.target} 
+              href={`#${link.target}`}
               onClick={() => setIsOpen(false)}
               className="text-white hover:text-black font-bold text-lg border-b border-white/20 pb-2 transition-colors"
             >
-              {link}
+              {link.label}
             </a>
           ))}
           <div className="pt-4 pb-2">
