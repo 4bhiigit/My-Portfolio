@@ -254,6 +254,18 @@ export const certificates = {
       issuer: "Udemy",
       icon: "📋",
       credentialUrl: "https://www.udemy.com/certificate/UC-2e3b80b8-f4ec-446a-bd6d-819cf728c600/",
+    },
+    {
+      name: "AI Tools & ChatGPT Workshop",
+      issuer: "be10x",
+      icon: "🤖",
+      credentialUrl: "https://drive.google.com/file/d/1cKrlmfcgdvzGnCRJ2b7ByxB2_w0QQEXv/view?usp=sharing",
+    },
+    {
+      name: "Internship Common Aptitude Test",
+      issuer: "iCAT",
+      icon: "📜",
+      credentialUrl: "https://drive.google.com/file/d/1nqWdELNwAqoVLrvGd8u_99quKeM0RAWa/view?usp=sharing",
     }
   ]
 };
