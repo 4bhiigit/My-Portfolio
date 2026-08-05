@@ -36,9 +36,9 @@ const Hero = () => {
       {/* Background Video */}
       <video
         ref={videoRef}
-        loop
         muted={isMuted}
         playsInline
+        onEnded={() => setIsPlaying(false)}
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
         <source src={heroVideo} type="video/mp4" />
