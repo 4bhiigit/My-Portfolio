@@ -216,6 +216,36 @@ export const projects = [
 export const certificates = {
   featured: [
     {
+      name: "Building AI Agents with MongoDB",
+      issuer: "MongoDB",
+      icon: "🤖",
+      credentialUrl: "https://www.credly.com/badges/09895b4e-bf0a-4dbd-ac9c-eadde0c1d5d6",
+    },
+    {
+      name: "Building RAG Apps Using MongoDB",
+      issuer: "MongoDB",
+      icon: "📚",
+      credentialUrl: "https://www.credly.com/badges/8c8cabc1-51ed-425e-810c-c2c302a600ec",
+    },
+    {
+      name: "Building AI-Powered Search with MongoDB Vector Search",
+      issuer: "MongoDB",
+      icon: "🔍",
+      credentialUrl: "https://www.credly.com/badges/99acf2f5-8716-4d52-ab81-c83a1754a13d",
+    },
+    {
+      name: "AI and Innovation: How MongoDB Enables a Resilient AI Strategy",
+      issuer: "MongoDB",
+      icon: "🍃",
+      credentialUrl: "https://www.credly.com/go/jfF4lU7Z",
+    },
+    {
+      name: "MongoDB Basics for Students",
+      issuer: "MongoDB",
+      icon: "🎓",
+      credentialUrl: "https://www.credly.com/badges/b6b2eb85-d0ce-4895-a17a-0eaad91fb8ee",
+    },
+    {
       name: "Cloud Computing",
       issuer: "NPTEL",
       icon: "☁️",
@@ -227,14 +257,38 @@ export const certificates = {
       icon: "💻",
       credentialUrl: "https://drive.google.com/file/d/1vCZw6v5cG4bcJ8aQXm4QNj0l5Bt_-ydK/view",
     },
-    {
-      name: "Software Development Processes and Methodologies",
-      issuer: "Coursera",
-      icon: "⚙️",
-      credentialUrl: "https://www.coursera.org/account/accomplishments/verify/EJL2LATCTYBT",
-    },
   ],
   all: [
+    {
+      name: "Building AI Agents with MongoDB",
+      issuer: "MongoDB",
+      icon: "🤖",
+      credentialUrl: "https://www.credly.com/badges/09895b4e-bf0a-4dbd-ac9c-eadde0c1d5d6",
+    },
+    {
+      name: "Building RAG Apps Using MongoDB",
+      issuer: "MongoDB",
+      icon: "📚",
+      credentialUrl: "https://www.credly.com/badges/8c8cabc1-51ed-425e-810c-c2c302a600ec",
+    },
+    {
+      name: "Building AI-Powered Search with MongoDB Vector Search",
+      issuer: "MongoDB",
+      icon: "🔍",
+      credentialUrl: "https://www.credly.com/badges/99acf2f5-8716-4d52-ab81-c83a1754a13d",
+    },
+    {
+      name: "AI and Innovation: How MongoDB Enables a Resilient AI Strategy",
+      issuer: "MongoDB",
+      icon: "🍃",
+      credentialUrl: "https://www.credly.com/go/jfF4lU7Z",
+    },
+    {
+      name: "MongoDB Basics for Students",
+      issuer: "MongoDB",
+      icon: "🎓",
+      credentialUrl: "https://www.credly.com/badges/b6b2eb85-d0ce-4895-a17a-0eaad91fb8ee",
+    },
     {
       name: "Cloud Computing",
       issuer: "NPTEL",
