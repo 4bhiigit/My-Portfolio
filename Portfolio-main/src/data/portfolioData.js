@@ -329,7 +329,7 @@ export const certificates = {
       name: "Teamwork Skills: Communicating Effectively in Groups",
       issuer: "Infosys Springboard",
       icon: "🤝",
-      credentialUrl: "https://verify.onwingspan.com",
+      credentialUrl: "https://drive.google.com/file/d/1gHR_WWImvNbwAyyJiAmyHoJLq_KaZ7O3/view?usp=sharing",
     }
   ]
 };
