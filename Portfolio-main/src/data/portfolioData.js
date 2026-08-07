@@ -324,6 +324,12 @@ export const certificates = {
       issuer: "iCAT",
       icon: "📜",
       credentialUrl: "https://drive.google.com/file/d/1nqWdELNwAqoVLrvGd8u_99quKeM0RAWa/view?usp=sharing",
+    },
+    {
+      name: "Teamwork Skills: Communicating Effectively in Groups",
+      issuer: "Infosys Springboard",
+      icon: "🤝",
+      credentialUrl: "https://verify.onwingspan.com",
     }
   ]
 };
