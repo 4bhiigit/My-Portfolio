@@ -251,12 +251,6 @@ export const certificates = {
       icon: "☁️",
       credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
     },
-    {
-      name: "Summer Trainee (Full Stack Web Development)",
-      issuer: "Lovely Professional University (CPE)",
-      icon: "💻",
-      credentialUrl: "https://drive.google.com/file/d/1vCZw6v5cG4bcJ8aQXm4QNj0l5Bt_-ydK/view",
-    },
   ],
   all: [
     {
