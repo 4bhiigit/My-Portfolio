@@ -44,12 +44,21 @@ const Contact = () => {
       emailjsConfig.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY';
 
     if (!isConfigured) {
-      // EmailJS not configured — fallback to prefilled mailto
-      const mailtoLink = `mailto:${personalInfo.emails.primary}?subject=Portfolio Contact from ${firstName} ${lastName}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
-      window.open(mailtoLink, '_blank');
+      // EmailJS not configured — fallback to prefilled mailto without opening empty tabs or getting blocked by popup blockers
+      const mailtoSubject = encodeURIComponent(`Portfolio Contact from ${firstName} ${lastName}`);
+      const mailtoBody = encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`);
+      const mailtoLink = `mailto:${personalInfo.emails.primary}?subject=${mailtoSubject}&body=${mailtoBody}`;
+      
+      const tempLink = document.createElement('a');
+      tempLink.href = mailtoLink;
+      tempLink.style.display = 'none';
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+
       setStatus('success');
       formRef.current.reset();
-      setTimeout(() => setStatus('idle'), 3000);
+      setTimeout(() => setStatus('idle'), 4000);
       return;
     }
 
@@ -60,7 +69,7 @@ const Contact = () => {
         emailjsConfig.serviceId,
         emailjsConfig.templateId,
         formRef.current,
-        emailjsConfig.publicKey
+        { publicKey: emailjsConfig.publicKey }
       );
       setStatus('success');
       formRef.current.reset();
