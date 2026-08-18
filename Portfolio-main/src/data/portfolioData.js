@@ -194,8 +194,22 @@ export const projects = [
     isFlagship: true,
   },
   {
-    id: "retail-sales-dashboard",
+    id: "linkpulse",
     number: "02",
+    badge: "🔗 Web Application",
+    title: "LinkPulse (URL Shortener)",
+    description:
+      "A full-featured, modern URL shortener with custom short aliases, password-protected links, auto-expiration options, live click analytics, and instant QR code generation. Built with Next.js (App Router), Tailwind CSS, and Upstash Redis for fast, serverless link storage and real-time click tracking.",
+    techTags: ["Next.js", "Tailwind CSS", "Upstash Redis"],
+    links: {
+      github: "https://github.com/4bhiigit/shorturl.git",
+      demo: "https://shorturl-nine-pi.vercel.app/",
+    },
+    isFlagship: false,
+  },
+  {
+    id: "retail-sales-dashboard",
+    number: "03",
     badge: "📊 BI Dashboard",
     title: "Retail Sales Performance Dashboard",
     description:
@@ -209,7 +223,7 @@ export const projects = [
   },
   {
     id: "tax-data-analysis",
-    number: "03",
+    number: "04",
     badge: "🐍 Python Analytics",
     title: "TAX Data Analysis",
     description:
