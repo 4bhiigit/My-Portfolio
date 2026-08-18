@@ -170,16 +170,26 @@ export const softSkillsList = [
 
 export const projects = [
   {
-    id: "huehaven",
+    id: "gka",
     number: "01",
-    badge: "🚀 GUI Application",
-    title: "HueHaven",
+    badge: "🤖 AI / RAG Platform",
+    title: "GKA (GitHub Knowledge Assistant)",
     description:
-      "A GUI-based application that empowers users to explore, generate, and organize color palettes with enhanced usability and smooth navigation. Built with Java Swing and AWT components utilizing event-driven architecture, real-time color rendering, and HEX/RGB conversion using OOP-driven modular design. Includes a production-ready palette manager enabling persistent storage of custom themes, improving user productivity and design consistency.",
-    techTags: ["Java", "Swing/AWT", "OOP", "Java DB"],
+      "A RAG-based codebase chat platform that lets developers ask natural-language questions about any GitHub repo and get contextual answers with code citations. Built on a free-tier stack: Groq API (llama-3.3-70b-versatile) for inference, Qdrant (via Docker) as the vector store, sentence-transformers/Gemini for embeddings, PostgreSQL + Prisma for data, Redis + BullMQ for background jobs, and LangChain.js for orchestration.",
+    techTags: [
+      "Next.js",
+      "TypeScript",
+      "LangChain.js",
+      "Groq",
+      "Qdrant",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "BullMQ",
+    ],
     links: {
-      github: "https://github.com/4bhiigit/Haven",
-      demo: null,
+      github: "https://github.com/4bhiigit/GKA.git",
+      demo: "https://gka-alpha.vercel.app",
     },
     isFlagship: true,
   },
