@@ -355,7 +355,7 @@ export const certificates = {
 export const education = {
   degree: "B.Tech – Computer Science & Engineering",
   institution: "Lovely Professional University",
-  cgpa: "5.63",
+  cgpa: "5.80",
   graduation: "Present",
   twelfth: "12th (Intermediate) – 74.4%",
   tenth: "10th (Matriculation) – 79.5%",
