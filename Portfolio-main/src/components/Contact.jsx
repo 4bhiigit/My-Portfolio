@@ -30,23 +30,15 @@ const Contact = () => {
     // Validate inputs
     if (!firstName.trim() || !email.trim() || !message.trim()) {
       setStatus('error');
+      form.reportValidity?.();
       setTimeout(() => setStatus('idle'), 3000);
       return;
     }
 
-    // Check if EmailJS is configured (checking both placeholder values and falsy states)
-    const isConfigured = 
-      emailjsConfig.serviceId && 
-      emailjsConfig.serviceId !== 'YOUR_EMAILJS_SERVICE_ID' &&
-      emailjsConfig.templateId && 
-      emailjsConfig.templateId !== 'YOUR_EMAILJS_TEMPLATE_ID' &&
-      emailjsConfig.publicKey && 
-      emailjsConfig.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY';
-
-    if (!isConfigured) {
-      // EmailJS not configured — fallback to prefilled mailto without opening empty tabs or getting blocked by popup blockers
+    // Helper for mailto fallback
+    const triggerMailtoFallback = () => {
       const mailtoSubject = encodeURIComponent(`Portfolio Contact from ${firstName} ${lastName}`);
-      const mailtoBody = encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`);
+      const mailtoBody = encodeURIComponent(`Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`);
       const mailtoLink = `mailto:${personalInfo.emails.primary}?subject=${mailtoSubject}&body=${mailtoBody}`;
       
       const tempLink = document.createElement('a');
@@ -59,10 +51,23 @@ const Contact = () => {
       setStatus('success');
       formRef.current.reset();
       setTimeout(() => setStatus('idle'), 4000);
+    };
+
+    // Check if EmailJS is configured
+    const isConfigured = 
+      emailjsConfig.serviceId && 
+      emailjsConfig.serviceId !== 'YOUR_EMAILJS_SERVICE_ID' &&
+      emailjsConfig.templateId && 
+      emailjsConfig.templateId !== 'YOUR_EMAILJS_TEMPLATE_ID' &&
+      emailjsConfig.publicKey && 
+      emailjsConfig.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY';
+
+    if (!isConfigured) {
+      triggerMailtoFallback();
       return;
     }
 
-    // EmailJS integration
+    // EmailJS integration with graceful fallback
     try {
       const emailjs = await import('@emailjs/browser');
       await emailjs.sendForm(
@@ -73,12 +78,11 @@ const Contact = () => {
       );
       setStatus('success');
       formRef.current.reset();
+      setTimeout(() => setStatus('idle'), 4000);
     } catch (error) {
-      console.error('EmailJS Error:', error);
-      setStatus('error');
+      console.warn('EmailJS delivery failed, falling back to mail client:', error);
+      triggerMailtoFallback();
     }
-
-    setTimeout(() => setStatus('idle'), 4000);
   };
 
   return (
