@@ -224,7 +224,7 @@ export const projects = [
     ],
     links: {
       github: "https://github.com/4bhiigit/CodeMash.git",
-      demo: null,
+      demo: "https://codemesh-indol.vercel.app/",
     },
     isFlagship: false,
   },
