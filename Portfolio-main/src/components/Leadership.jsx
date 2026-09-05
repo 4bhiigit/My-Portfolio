@@ -17,10 +17,15 @@ const LeadershipItem = ({ item, index }) => {
         }`}
       >
         <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-red-500/30 hover:shadow-[0_15px_35px_rgba(255,42,42,0.1)] transition-all duration-500 text-left">
-          <div className="flex flex-wrap gap-2 items-center mb-3 justify-start">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
             <span className="bg-[#ff2a2a]/20 text-[#ff2a2a] text-[10px] font-black tracking-widest uppercase py-1 px-3 rounded-full border border-[#ff2a2a]/30">
               {item.badge}
             </span>
+            {item.date && (
+              <span className="text-white/40 text-xs font-mono font-bold tracking-widest uppercase">
+                {item.date}
+              </span>
+            )}
           </div>
           
           <h3 className="text-white text-xl font-black mb-1 tracking-tight group-hover:text-[#ff2a2a] transition-colors">

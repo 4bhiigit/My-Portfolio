@@ -8,15 +8,15 @@ export const personalInfo = {
   name: "Abhishek Dongre",
   firstName: "Abhishek",
   brandName: "Abhishek",
-  title: "Full Stack Developer & Data Analyst",
+  title: "Full Stack Developer & AI / Data Enthusiast",
   location: "Chhindwara, Madhya Pradesh, India",
   phone: "+91-9755616198",
   emails: {
-    primary: "abhishekdongre206@gmail.com",
-    secondary: "",
+    primary: "abhsihekdongre2062@gmail.com",
+    secondary: "abhishekdongre206@gmail.com",
   },
   summary:
-    "Motivated B.Tech Computer Science and Engineering student at Lovely Professional University with a strong foundation in Full Stack Web Development and Data Analysis. Proficient in Java, Python, React.js, and Power BI.",
+    "Motivated B.Tech Computer Science and Engineering student at Lovely Professional University with a strong foundation in Full Stack Web Development, Agentic AI, and Data Analytics. Proficient in TypeScript, React, Python, Java, and modern AI architectures.",
   resumeUrl: "/Abhishek_Resume_2026.pdf",
 };
 
@@ -28,9 +28,9 @@ export const socialLinks = {
 
 export const heroContent = {
   greeting: "Hi, I'm Abhishek Dongre",
-  titleHighlight: "FULL STACK DEVELOPER & DATA ANALYST",
+  titleHighlight: "FULL STACK DEVELOPER & AI ENTHUSIAST",
   subtitle:
-    "I build clean, responsive web applications and interactive data dashboards.",
+    "I build full-stack web applications, real-time systems, and intelligent AI-powered solutions.",
   ctaPrimary: { text: "View My Work", href: "#projects" },
   ctaSecondary: {
     text: "Contact Me",
@@ -41,15 +41,15 @@ export const heroContent = {
 
 export const aboutContent = {
   heading: "Hello!",
-  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Abhishek Dongre</span>, a B.Tech Computer Science student based in Madhya Pradesh, India. I am passionate about full-stack development, data analytics, and building scalable visual dashboards. I enjoy developing robust web applications, analyzing data to generate meaningful insights, and creating efficient, user-friendly solutions that solve real-world problems.`,
-  techStack: ["React.js", "Node.js", "Python", "Power BI"],
+  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Abhishek Dongre</span>, a B.Tech Computer Science student based in Madhya Pradesh, India. I am passionate about full-stack web development, intelligent agentic AI systems, and scalable architectures. I enjoy developing robust web applications, building low-latency real-time collaboration tools, and crafting efficient, user-centric solutions that solve real-world problems.`,
+  techStack: ["React.js", "TypeScript", "Python", "Node.js"],
 };
 
 export const skillsContent = {
   badge: "My Process",
   heading: "Here's how I turn ideas into real-world applications",
   description:
-    "I follow a structured, creative, and highly technical approach to turn ideas into robust applications and dashboards.",
+    "I follow a structured, creative, and highly technical approach to turn ideas into robust applications and scalable systems.",
   cards: [
     {
       number: "01",
@@ -59,17 +59,17 @@ export const skillsContent = {
     {
       number: "02",
       title: "Design",
-      text: "Crafting clean architecture, intuitive interfaces, and pixel-perfect wireframes that guarantee an engaging and accessible user experience.",
+      text: "Crafting clean architecture, intuitive interfaces, and modular system designs that guarantee an engaging and accessible user experience.",
     },
     {
       number: "03",
       title: "Develop",
-      text: "Building scalable backends and responsive frontends using modern tech stacks and best practices.",
+      text: "Building scalable backends and responsive frontends using modern tech stacks, type safety, and engineering best practices.",
     },
     {
       number: "04",
       title: "Deploy",
-      text: "Rigorous testing, performance optimization, and seamless deployment to cloud infrastructure, followed by ongoing support.",
+      text: "Rigorous testing, containerization with Docker, performance optimization, and seamless deployment to cloud infrastructure.",
     },
   ],
   endText: "Ready to ship!",
@@ -81,39 +81,40 @@ export const technicalSkills = {
     {
       title: "Programming Languages",
       skills: [
-        { name: "Python", level: 85 },
-        { name: "C++", level: 75 },
-        { name: "C", level: 70 },
-        { name: "Java", level: 90 },
-        { name: "SQL", level: 80 },
-        { name: "HTML", level: 90 },
-        { name: "CSS", level: 85 },
-        { name: "JavaScript", level: 85 }
+        { name: "Python", level: 90 },
+        { name: "Java", level: 85 },
+        { name: "C++", level: 80 },
+        { name: "C", level: 75 },
+        { name: "SQL", level: 85 },
+        { name: "JavaScript", level: 90 },
+        { name: "TypeScript", level: 82 },
+        { name: "HTML & CSS", level: 90 }
       ]
     },
     {
       title: "Frameworks & Libraries",
       skills: [
-        { name: "React.js", level: 88 },
-        { name: "Node.js", level: 82 },
-        { name: "Express.js", level: 80 },
-        { name: "Django", level: 78 },
-        { name: "Django REST Framework", level: 75 },
-        { name: "Pandas & NumPy", level: 85 },
-        { name: "Matplotlib & Seaborn", level: 82 },
-        { name: "Scikit-learn", level: 70 }
+        { name: "React.js", level: 90 },
+        { name: "Node.js & Express.js", level: 85 },
+        { name: "Django & DRF", level: 80 },
+        { name: "HTMX & Alpine.js", level: 82 },
+        { name: "Scikit-learn", level: 78 },
+        { name: "Pandas & NumPy", level: 88 },
+        { name: "Matplotlib & Seaborn", level: 85 },
+        { name: "Chart.js", level: 82 }
       ]
     },
     {
-      title: "Tools & Platforms",
+      title: "Tools, Platforms & Concepts",
       skills: [
-        { name: "Power BI", level: 90 },
-        { name: "Git & GitHub", level: 88 },
-        { name: "Docker", level: 75 },
-        { name: "Jenkins", level: 70 },
-        { name: "Tableau", level: 80 },
-        { name: "Excel", level: 85 },
-        { name: "REST APIs", level: 85 }
+        { name: "Docker", level: 80 },
+        { name: "Git & GitHub", level: 90 },
+        { name: "REST APIs", level: 90 },
+        { name: "Data Structures & Algorithms", level: 85 },
+        { name: "OOPs & DBMS", level: 88 },
+        { name: "Operating Systems", level: 82 },
+        { name: "Tableau & Power BI", level: 85 },
+        { name: "Excel & Data Analysis", level: 88 }
       ]
     }
   ]
@@ -127,31 +128,40 @@ export const contentCreation = {
   categories: []
 };
 
-// Leadership Data
+// Leadership & Activities Data
 export const leadershipList = [
   {
+    title: "Adobe University Hackathon",
+    description: "Showcased innovation, rapid prototyping, and software problem-solving skills in high-intensity hackathon development.",
+    role: "Participant & Innovator",
+    badge: "Hackathon",
+    date: "Aug '26"
+  },
+  {
     title: "Hack Quest – 24-Hours CTF Challenge",
-    description: "Participated in the 24-Hours CTF (Capture the Flag) Challenge during Concoction 2024, an intra-university tech fusion event at Lovely Professional University.",
+    description: "Participated and competed in the 24-Hours CTF (Capture the Flag) Challenge during Concoction 2024, an intra-university tech fusion event at Lovely Professional University.",
     role: "Participant & Competitor",
-    badge: "Cybersecurity"
+    badge: "Cybersecurity",
+    date: "Apr '24"
   },
   {
     title: "LPU Esports Championship – Call of Duty: Mobile (CODM)",
     description: "Secured 2nd Position (Runner-up) in the university-level Call of Duty: Mobile championship at Lovely Professional University. Led team tactics, map rotations, and quick in-game adaptations in high-pressure matches.",
     role: "Team Captain & Runner-up",
-    badge: "Esports"
+    badge: "Esports",
+    date: "2024"
   }
 ];
 
 // Internships / Training Data
 export const internshipsList = [
   {
-    organization: "Lovely Professional University (Centre for Professional Enhancement)",
+    organization: "Centre for Professional Enhancement, Lovely Professional University",
     role: "Summer Trainee (Full Stack Web Development)",
-    duration: "June 2025 - July 2025",
-    description: "Designed and developed responsive full-stack web applications. Built intuitive frontend interfaces, implemented secure RESTful API endpoints, integrated robust SQL/NoSQL databases, and utilized version control systems for clean deployment workflows.",
-    skills: ["Frontend UI Design", "Backend Logic", "RESTful APIs", "Database Integration", "Version Control"],
-    tech: ["React.js", "Node.js", "Express.js", "JavaScript", "MongoDB", "MySQL", "Git/GitHub", "Heroku"],
+    duration: "Jun '25 – Jul '25",
+    description: "Successfully completed summer training in Full Stack Web development, focusing on building responsive and interactive applications using React.js and creating server-side logic with Node.js. Developed and deployed RESTful APIs, integrated databases like MongoDB/MySQL, and worked on real world project modules following industry best practices. Strengthened skills in frontend UI design, backend logic, version control and end-to-end application development with a focus on clean, scalable code.",
+    skills: ["Frontend UI Design", "Backend Logic", "RESTful APIs", "Database Integration (MongoDB/MySQL)", "Version Control & Git", "Clean & Scalable Architecture"],
+    tech: ["React.js", "Node.js", "Express.js", "JavaScript", "REST APIs", "Git/GitHub", "Heroku", "MongoDB", "MySQL"],
     certificateUrl: "https://drive.google.com/file/d/1vCZw6v5cG4bcJ8aQXm4QNj0l5Bt_-ydK/view"
   }
 ];
@@ -159,13 +169,13 @@ export const internshipsList = [
 // Soft Skills Data
 export const softSkillsList = [
   { name: "Problem-Solving", icon: "🧩", desc: "Breaking down complex engineering tasks into clean, logical, and modular pieces." },
-  { name: "Team Player", icon: "🤝", desc: "Collaborating effectively across teams to build successful full-stack projects." },
-  { name: "Adaptability", icon: "🌟", desc: "Quick to pick up new frameworks, tools, and technical environments." },
+  { name: "Team Player", icon: "🤝", desc: "Collaborating effectively across cross-functional teams to build successful software projects." },
+  { name: "Adaptability", icon: "🌟", desc: "Quick to pick up new frameworks, AI architectures, tools, and technical environments." },
   { name: "Active Listener", icon: "👂", desc: "Listening attentively to team members and stakeholders to understand needs and execute projects precisely." },
-  { name: "Communication", icon: "💬", desc: "Explaining ideas clearly, giving feedback, and keeping stakeholders aligned." },
-  { name: "Time Management", icon: "⏱️", desc: "Organizing tasks, meeting deadlines, and balancing multiple priorities effectively." },
-  { name: "Creative Thinking", icon: "🎨", desc: "Finding innovative solutions to problems and improving user experiences with fresh ideas." },
-  { name: "Leadership", icon: "🏆", desc: "Motivating teams, guiding decisions, and taking ownership of project outcomes." }
+  { name: "Communication", icon: "💬", desc: "Explaining technical ideas clearly, giving constructive feedback, and keeping stakeholders aligned." },
+  { name: "Time Management", icon: "⏱️", desc: "Organizing tasks, meeting aggressive deadlines, and balancing multiple priorities effectively." },
+  { name: "Creative Thinking", icon: "🎨", desc: "Finding innovative solutions to complex engineering challenges with fresh approaches." },
+  { name: "Leadership", icon: "🏆", desc: "Motivating teams, guiding technical decisions, and taking full ownership of project outcomes." }
 ];
 
 export const projects = [
@@ -173,19 +183,19 @@ export const projects = [
     id: "gka",
     number: "01",
     badge: "🤖 AI / RAG Platform",
-    title: "GKA (GitHub Knowledge Assistant)",
+    title: "GitHub Knowledge Assistant (GKA)",
     description:
-      "A RAG-based codebase chat platform that lets developers ask natural-language questions about any GitHub repo and get contextual answers with code citations. Built on a free-tier stack: Groq API (llama-3.3-70b-versatile) for inference, Qdrant (via Docker) as the vector store, sentence-transformers/Gemini for embeddings, PostgreSQL + Prisma for data, Redis + BullMQ for background jobs, and LangChain.js for orchestration.",
+      "A full-stack RAG platform that ingests any public GitHub repository and lets developers chat with the entire codebase in natural language, backed by strict file-and-line citations. Designed a code-aware semantic chunking pipeline with function/class-boundary splitting and exact line-span tracking, powering vector search over embeddings for accurate, context-grounded retrieval. Implemented real-time streaming chat (SSE) with an interactive file explorer, one-click AI-generated architecture summaries, and a zero-config SQLite/Prisma backend with optional Docker-based Postgres/Qdrant deployment.",
     techTags: [
-      "Next.js",
       "TypeScript",
-      "LangChain.js",
-      "Groq",
-      "Qdrant",
-      "PostgreSQL",
+      "Node.js",
+      "SQLite / PostgreSQL",
+      "Groq API",
+      "Gemini API",
+      "Docker",
       "Prisma",
-      "Redis",
-      "BullMQ",
+      "Qdrant",
+      "LangChain.js"
     ],
     links: {
       github: "https://github.com/4bhiigit/GKA.git",
@@ -194,33 +204,18 @@ export const projects = [
     isFlagship: true,
   },
   {
-    id: "linkpulse",
-    number: "02",
-    badge: "🔗 Web Application",
-    title: "LinkPulse (URL Shortener)",
-    description:
-      "A full-featured, modern URL shortener with custom short aliases, password-protected links, auto-expiration options, live click analytics, and instant QR code generation. Built with Next.js (App Router), Tailwind CSS, and Upstash Redis for fast, serverless link storage and real-time click tracking.",
-    techTags: ["Next.js", "Tailwind CSS", "Upstash Redis"],
-    links: {
-      github: "https://github.com/4bhiigit/shorturl.git",
-      demo: "https://shorturl-nine-pi.vercel.app/",
-    },
-    isFlagship: false,
-  },
-  {
     id: "codemesh",
-    number: "03",
-    badge: "⚡ Collaborative Code Editor",
-    title: "CodeMesh (Real-Time Collaborative Code Editor)",
+    number: "02",
+    badge: "⚡ Real-Time Collaboration",
+    title: "CodeMesh - Collaborative Code Editor",
     description:
-      "A real-time collaborative code editor implementing a custom Operational Transformation (OT) algorithm (over CRDT/Yjs) for seamless multi-user conflict resolution. Engineered a low-latency sync layer using Socket.io for real-time broadcasts of edits, cursor positions, and presence indicators, integrated with Monaco Editor for syntax highlighting and IntelliSense.",
+      "A real-time collaborative code editor implementing a custom Operational Transformation (OT) algorithm (over CRDT/Yjs) for multi-user conflict resolution. Engineered a low-latency sync layer using Socket.io for real-time broadcast of edits, cursor positions, and presence indicators across connected users. Integrated Monaco Editor (VS Code's editor engine) for a full-featured in-browser coding experience with syntax highlighting and IntelliSense.",
     techTags: [
       "React",
       "Monaco Editor",
       "Socket.io",
       "Node.js",
-      "JavaScript",
-      "Monorepo",
+      "JavaScript"
     ],
     links: {
       github: "https://github.com/4bhiigit/CodeMash.git",
@@ -230,19 +225,20 @@ export const projects = [
   },
   {
     id: "employee-management-system",
-    number: "04",
+    number: "03",
     badge: "🏢 Enterprise Web App",
     title: "Employee Management System",
     description:
-      "An enterprise-grade Employee Management System featuring role-based access control (RBAC) with granular permission tiers for admin, HR, and employee-level access. Built with HTMX + Alpine.js for dynamic, lightweight reactive UI updates, integrated Chart.js for real-time analytics dashboards, and automated Excel/PDF report generation.",
+      "An enterprise-grade Employee Management System featuring role-based access control (RBAC) with granular permission tiers for admin, HR, and employee-level access. Built with HTMX + Alpine.js for a dynamic, reactive frontend without a heavy JS framework — enabling partial page updates and interactive UI with minimal client-side overhead. Integrated Chart.js for real-time dashboards visualizing employee data, attendance, and performance metrics, with automated Excel/PDF report generation.",
     techTags: [
       "Flask",
-      "Python",
       "SQLAlchemy",
-      "RBAC",
+      "Pandas",
       "HTMX",
       "Alpine.js",
       "Chart.js",
+      "Python",
+      "RBAC"
     ],
     links: {
       github: "https://github.com/4bhiigit/Flask-Development.git",
@@ -250,15 +246,47 @@ export const projects = [
     },
     isFlagship: false,
   },
+  {
+    id: "linkpulse",
+    number: "04",
+    badge: "🔗 Web Application",
+    title: "LinkPulse (URL Shortener)",
+    description:
+      "A full-featured, modern URL shortener with custom short aliases, password-protected links, auto-expiration options, live click analytics, and instant QR code generation. Built with Next.js (App Router), Tailwind CSS, and Upstash Redis for fast, serverless link storage and real-time click tracking.",
+    techTags: ["Next.js", "Tailwind CSS", "Upstash Redis", "TypeScript"],
+    links: {
+      github: "https://github.com/4bhiigit/shorturl.git",
+      demo: "https://shorturl-nine-pi.vercel.app/",
+    },
+    isFlagship: false,
+  }
 ];
 
 export const certificates = {
   featured: [
     {
-      name: "Building AI Agents with MongoDB",
-      issuer: "MongoDB",
+      name: "Build an AI Automated Ordering System with Python & AWS",
+      issuer: "Infosys",
+      icon: "⚡",
+      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
+    },
+    {
+      name: "Agentic AI Development with Agent Framework, MCP and .NET",
+      issuer: "Infosys",
       icon: "🤖",
+      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
+    },
+    {
+      name: "Building AI Agents with MongoDB",
+      issuer: "MongoDB University",
+      icon: "🍃",
       credentialUrl: "https://www.credly.com/badges/09895b4e-bf0a-4dbd-ac9c-eadde0c1d5d6",
+    },
+    {
+      name: "Cloud Computing",
+      issuer: "NPTEL",
+      icon: "☁️",
+      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
     },
     {
       name: "Building RAG Apps Using MongoDB",
@@ -271,32 +299,32 @@ export const certificates = {
       issuer: "MongoDB",
       icon: "🔍",
       credentialUrl: "https://www.credly.com/badges/99acf2f5-8716-4d52-ab81-c83a1754a13d",
-    },
-    {
-      name: "AI and Innovation: How MongoDB Enables a Resilient AI Strategy",
-      issuer: "MongoDB",
-      icon: "🍃",
-      credentialUrl: "https://www.credly.com/go/jfF4lU7Z",
-    },
-    {
-      name: "MongoDB Basics for Students",
-      issuer: "MongoDB",
-      icon: "🎓",
-      credentialUrl: "https://www.credly.com/badges/b6b2eb85-d0ce-4895-a17a-0eaad91fb8ee",
-    },
-    {
-      name: "Cloud Computing",
-      issuer: "NPTEL",
-      icon: "☁️",
-      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
     },
   ],
   all: [
     {
-      name: "Building AI Agents with MongoDB",
-      issuer: "MongoDB",
+      name: "Build an AI Automated Ordering System with Python & AWS",
+      issuer: "Infosys",
+      icon: "⚡",
+      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
+    },
+    {
+      name: "Agentic AI Development with Agent Framework, MCP and .NET",
+      issuer: "Infosys",
       icon: "🤖",
+      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
+    },
+    {
+      name: "Building AI Agents with MongoDB",
+      issuer: "MongoDB University",
+      icon: "🍃",
       credentialUrl: "https://www.credly.com/badges/09895b4e-bf0a-4dbd-ac9c-eadde0c1d5d6",
+    },
+    {
+      name: "Cloud Computing",
+      issuer: "NPTEL",
+      icon: "☁️",
+      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
     },
     {
       name: "Building RAG Apps Using MongoDB",
@@ -313,7 +341,7 @@ export const certificates = {
     {
       name: "AI and Innovation: How MongoDB Enables a Resilient AI Strategy",
       issuer: "MongoDB",
-      icon: "🍃",
+      icon: "💡",
       credentialUrl: "https://www.credly.com/go/jfF4lU7Z",
     },
     {
@@ -321,12 +349,6 @@ export const certificates = {
       issuer: "MongoDB",
       icon: "🎓",
       credentialUrl: "https://www.credly.com/badges/b6b2eb85-d0ce-4895-a17a-0eaad91fb8ee",
-    },
-    {
-      name: "Cloud Computing",
-      issuer: "NPTEL",
-      icon: "☁️",
-      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
     },
     {
       name: "Summer Trainee (Full Stack Web Development)",
@@ -369,18 +391,18 @@ export const certificates = {
 
 export const education = {
   degree: "B.Tech – Computer Science & Engineering",
-  institution: "Lovely Professional University",
+  institution: "Lovely Professional University (Phagwara, Punjab)",
   cgpa: "5.80",
-  graduation: "Present",
-  twelfth: "12th (Intermediate) – 74.4%",
-  tenth: "10th (Matriculation) – 79.5%",
+  graduation: "Aug '23 – Present",
+  twelfth: "Sanskar Srajan H.S. School (Intermediate | 74.4%)",
+  tenth: "Sanskar Srajan H.S. School (Matriculation | 79.5%)",
 };
 
 export const footerContent = {
   taglines: [
-    "Data Analytics & Web Dev",
-    "Java · Python · React",
-    "Full Stack Applications",
+    "Full Stack Development",
+    "Agentic AI & RAG Systems",
+    "Python · TypeScript · React",
   ],
   credential: "B.Tech CSE · Lovely Professional University",
   copyright: `© ${new Date().getFullYear()} Abhishek Dongre | Built with React`,
@@ -392,3 +414,4 @@ export const emailjsConfig = {
   templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "YOUR_EMAILJS_TEMPLATE_ID",
   publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_EMAILJS_PUBLIC_KEY",
 };
+
