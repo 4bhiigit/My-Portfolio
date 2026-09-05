@@ -266,15 +266,27 @@ export const certificates = {
   featured: [
     {
       name: "Build an AI Automated Ordering System with Python & AWS",
-      issuer: "Infosys",
+      issuer: "Infosys Springboard",
       icon: "⚡",
-      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
+      credentialUrl: "/certificates/Build_an_AI_Automated_Ordering_System_Python_AWS_Infosys.pdf",
     },
     {
       name: "Agentic AI Development with Agent Framework, MCP and .NET",
-      issuer: "Infosys",
+      issuer: "Infosys Springboard",
       icon: "🤖",
-      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
+      credentialUrl: "/certificates/Agentic_AI_Development_Agent_Framework_MCP_NET_Infosys.pdf",
+    },
+    {
+      name: "Generative AI for Beginners",
+      issuer: "Infosys Springboard",
+      icon: "🧠",
+      credentialUrl: "/certificates/Generative_AI_for_Beginners_Infosys.pdf",
+    },
+    {
+      name: "Responsible AI: Principles, Practices, and Applications",
+      issuer: "Infosys Springboard",
+      icon: "🛡️",
+      credentialUrl: "/certificates/Responsible_AI_Principles_Practices_Applications_Infosys.pdf",
     },
     {
       name: "Building AI Agents with MongoDB",
@@ -288,31 +300,31 @@ export const certificates = {
       icon: "☁️",
       credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
     },
-    {
-      name: "Building RAG Apps Using MongoDB",
-      issuer: "MongoDB",
-      icon: "📚",
-      credentialUrl: "https://www.credly.com/badges/8c8cabc1-51ed-425e-810c-c2c302a600ec",
-    },
-    {
-      name: "Building AI-Powered Search with MongoDB Vector Search",
-      issuer: "MongoDB",
-      icon: "🔍",
-      credentialUrl: "https://www.credly.com/badges/99acf2f5-8716-4d52-ab81-c83a1754a13d",
-    },
   ],
   all: [
     {
       name: "Build an AI Automated Ordering System with Python & AWS",
-      issuer: "Infosys",
+      issuer: "Infosys Springboard",
       icon: "⚡",
-      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
+      credentialUrl: "/certificates/Build_an_AI_Automated_Ordering_System_Python_AWS_Infosys.pdf",
     },
     {
       name: "Agentic AI Development with Agent Framework, MCP and .NET",
-      issuer: "Infosys",
+      issuer: "Infosys Springboard",
       icon: "🤖",
-      credentialUrl: "https://drive.google.com/file/d/15V-CWwQBA6w6hvUXevuc5LB5MU5vAJRH/view?usp=sharing",
+      credentialUrl: "/certificates/Agentic_AI_Development_Agent_Framework_MCP_NET_Infosys.pdf",
+    },
+    {
+      name: "Generative AI for Beginners",
+      issuer: "Infosys Springboard",
+      icon: "🧠",
+      credentialUrl: "/certificates/Generative_AI_for_Beginners_Infosys.pdf",
+    },
+    {
+      name: "Responsible AI: Principles, Practices, and Applications",
+      issuer: "Infosys Springboard",
+      icon: "🛡️",
+      credentialUrl: "/certificates/Responsible_AI_Principles_Practices_Applications_Infosys.pdf",
     },
     {
       name: "Building AI Agents with MongoDB",
