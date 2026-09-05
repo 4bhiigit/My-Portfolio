@@ -8,7 +8,7 @@ export const personalInfo = {
   name: "Abhishek Dongre",
   firstName: "Abhishek",
   brandName: "Abhishek",
-  title: "Full Stack Developer & AI / Data Enthusiast",
+  title: "Data Analyst & Full Stack Developer",
   location: "Chhindwara, Madhya Pradesh, India",
   phone: "+91-9755616198",
   emails: {
@@ -28,9 +28,9 @@ export const socialLinks = {
 
 export const heroContent = {
   greeting: "Hi, I'm Abhishek Dongre",
-  titleHighlight: "FULL STACK DEVELOPER & AI ENTHUSIAST",
+  titleHighlight: "Data Analyst & Full Stack Developer",
   subtitle:
-    "I build full-stack web applications, real-time systems, and intelligent AI-powered solutions.",
+    "I build Data Analytics projects, Full-stack web applications, and intelligent AI-powered solutions.",
   ctaPrimary: { text: "View My Work", href: "#projects" },
   ctaSecondary: {
     text: "Contact Me",
@@ -157,7 +157,7 @@ export const leadershipList = [
 export const internshipsList = [
   {
     organization: "Centre for Professional Enhancement, Lovely Professional University",
-    role: "Summer Trainee (Full Stack Web Development)",
+    role: "Summer Training(Full Stack Web Development)",
     duration: "Jun '25 – Jul '25",
     description: "Successfully completed summer training in Full Stack Web development, focusing on building responsive and interactive applications using React.js and creating server-side logic with Node.js. Developed and deployed RESTful APIs, integrated databases like MongoDB/MySQL, and worked on real world project modules following industry best practices. Strengthened skills in frontend UI design, backend logic, version control and end-to-end application development with a focus on clean, scalable code.",
     skills: ["Frontend UI Design", "Backend Logic", "RESTful APIs", "Database Integration (MongoDB/MySQL)", "Version Control & Git", "Clean & Scalable Architecture"],
@@ -412,7 +412,7 @@ export const education = {
 
 export const footerContent = {
   taglines: [
-    "Full Stack Development",
+    "Data Analytics & Full Stack",
     "Agentic AI & RAG Systems",
     "Python · TypeScript · React",
   ],

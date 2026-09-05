@@ -56,7 +56,7 @@ const About = () => {
               <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
                 <img 
                   src={stackImage} 
-                  alt="Abhishek — Full Stack Developer & Data Analyst" 
+                  alt="Abhishek — Data Analyst & Full Stack Developer" 
                   className="w-full h-full object-cover object-top"
                 />
               </div>
