@@ -4,85 +4,116 @@ import { personalInfo } from '../data/portfolioData';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
-  // Handle scroll to make navbar more solid
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      setIsScrolled(window.scrollY > 40);
+
+      // Simple active section detection
+      const sections = ['home', 'about', 'skills', 'services', 'projects', 'experience', 'activities', 'certificates', 'softskills', 'contact'];
+      const scrollPosition = window.scrollY + 200;
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
       }
     };
+
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
     { label: 'Home', target: 'home' },
     { label: 'About', target: 'about' },
-    { label: 'Expertise', target: 'skills' },
+    { label: 'Skills', target: 'skills' },
+    { label: 'Workflow', target: 'services' },
     { label: 'Projects', target: 'projects' },
     { label: 'Experience', target: 'experience' },
     { label: 'Activities', target: 'activities' },
-    { label: 'Certificates', target: 'certificates' },
-    { label: 'Softskills', target: 'softskills' },
+    { label: 'Certs', target: 'certificates' },
     { label: 'Contact', target: 'contact' },
   ];
 
   const hireMeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.emails.primary}&su=${encodeURIComponent('Hiring Inquiry – Portfolio')}&body=${encodeURIComponent('Hello Abhishek,\n\nI came across your portfolio and would like to discuss an opportunity with you.\n\nLooking forward to hearing from you.\n\nBest Regards,')}`;
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isOpen 
-          ? 'bg-[#ff2a2a] py-4'
-          : isScrolled 
-            ? 'bg-transparent py-4' 
-            : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        
-        {/* Left Side: Logo/Name */}
-        <div className="flex items-center">
-          <a href="#home" className="text-white text-2xl font-black tracking-tight whitespace-nowrap">
-            {personalInfo.brandName}<span className="text-red-500">.</span>
-          </a>
-        </div>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 py-4">
+      <div 
+        className={`max-w-7xl mx-auto rounded-full transition-all duration-300 px-5 sm:px-8 py-3 flex items-center justify-between ${
+          isScrolled 
+            ? 'bg-[#06080f]/85 backdrop-blur-xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]' 
+            : 'bg-[#0b0f19]/60 backdrop-blur-md border border-white/5'
+        }`}
+      >
+        {/* Brand Logo */}
+        <a 
+          href="#home" 
+          className="flex items-center gap-2 group text-white font-heading font-extrabold text-xl tracking-tight"
+        >
+          <span className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white text-sm font-black shadow-[0_0_15px_rgba(6,182,212,0.4)] group-hover:scale-105 transition-transform">
+            A
+          </span>
+          <span className="tracking-wide text-slate-100 group-hover:text-cyan-400 transition-colors">
+            {personalInfo.brandName}
+            <span className="text-cyan-400">.</span>
+          </span>
+        </a>
 
-        {/* Center: Desktop Menu Links */}
-        <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <a 
-              key={link.target} 
-              href={`#${link.target}`}
-              className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
-            >
-              {link.label}
-              {/* Smooth hover underline */}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
-        </div>
+        {/* Desktop Nav Links */}
+        <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.target;
+            return (
+              <a
+                key={link.target}
+                href={`#${link.target}`}
+                className={`px-3 py-1.5 rounded-full text-xs xl:text-sm font-medium transition-all duration-200 ${
+                  isActive
+                    ? 'text-white bg-cyan-500/15 border border-cyan-500/30 shadow-[0_0_12px_rgba(6,182,212,0.2)]'
+                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+        </nav>
 
-        {/* Right Side: CTA Button */}
-        <div className="hidden md:block">
-          <a 
+        {/* Right CTA */}
+        <div className="hidden sm:flex items-center gap-3">
+          <a
             href={hireMeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md"
+            className="relative group px-5 py-2 rounded-full text-xs font-semibold text-white overflow-hidden transition-all duration-300"
           >
-            Hire Me
+            <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-indigo-600 group-hover:opacity-90 transition-opacity"></span>
+            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity blur-md bg-gradient-to-r from-cyan-400 to-indigo-500"></span>
+            <span className="relative z-10 flex items-center gap-1.5">
+              <span>Hire Me</span>
+              <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
           </a>
         </div>
 
-        {/* Mobile Hamburger Menu Icon */}
-        <div className="md:hidden flex items-center">
-          <button 
+        {/* Mobile Hamburger Button */}
+        <div className="lg:hidden flex items-center">
+          <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none p-2"
+            aria-label="Toggle Navigation Menu"
+            className="p-2 text-slate-300 hover:text-white rounded-lg hover:bg-white/5 focus:outline-none"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
@@ -95,37 +126,47 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Slide-Down Menu */}
+      {/* Mobile Drawer */}
       <div 
-        className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden ${
-          isOpen ? 'max-h-96 py-4 opacity-100 bg-[#ff2a2a] shadow-2xl' : 'max-h-0 opacity-0 bg-transparent'
+        className={`lg:hidden transition-all duration-300 overflow-hidden ${
+          isOpen ? 'max-h-[500px] mt-3 opacity-100' : 'max-h-0 mt-0 opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex flex-col px-6 space-y-4">
-          {navLinks.map((link) => (
-            <a 
-              key={link.target} 
-              href={`#${link.target}`}
+        <div className="max-w-7xl mx-auto rounded-2xl bg-[#06080f]/95 backdrop-blur-2xl border border-white/10 p-5 shadow-2xl flex flex-col space-y-2">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.target;
+            return (
+              <a
+                key={link.target}
+                href={`#${link.target}`}
+                onClick={() => setIsOpen(false)}
+                className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                  isActive
+                    ? 'text-cyan-400 bg-cyan-500/10 font-semibold'
+                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+          <div className="pt-3 border-t border-white/10">
+            <a
+              href={hireMeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="text-white hover:text-black font-bold text-lg border-b border-white/20 pb-2 transition-colors"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/20"
             >
-              {link.label}
+              <span>Hire Me</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </a>
-          ))}
-          <div className="pt-4 pb-2">
-             <a 
-               href={hireMeUrl}
-               target="_blank"
-               rel="noopener noreferrer"
-               onClick={() => setIsOpen(false)} 
-               className="inline-block px-6 py-3 rounded-full bg-white text-[#ff2a2a] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
-             >
-               Hire Me
-             </a>
           </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

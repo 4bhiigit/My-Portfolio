@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-cyber-bg: #06080f;
+  --color-cyber-card: rgba(11, 15, 25, 0.75);
+  --color-cyber-card-hover: rgba(15, 23, 42, 0.9);
+  --color-cyber-border: rgba(255, 255, 255, 0.08);
+  --color-cyber-border-glow: rgba(6, 182, 212, 0.3);
+  --color-cyan-neon: #06b6d4;
+  --color-cyan-glow: #22d3ee;
+  --color-indigo-neon: #6366f1;
+
   --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.4; filter: blur(40px); }
+    50% { opacity: 0.75; filter: blur(55px); }
   }
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #000;
-  color: #fff;
+  background-color: #06080f;
+  color: #f1f5f9;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #06b6d4;
+  selection-color: #000;
 }
 
+::selection {
+  background: rgba(6, 182, 212, 0.35);
+  color: #ffffff;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #06080f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 2px solid #06080f;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Modern Glass & Grid Utilities */
+.glass-panel {
+  background: rgba(11, 15, 25, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel:hover {
+  border-color: rgba(6, 182, 212, 0.25);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(11, 15, 25, 0.75) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.15);
+  transform: translateY(-3px);
+}
+
+.glass-card-static {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(11, 15, 25, 0.75) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Ambient Subtle Cyber Grid */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.cyber-grid-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Gradient Text Shorthands */
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #ffffff 0%, #22d3ee 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-indigo {
+  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-multi {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glowing Accent Badges */
+.badge-glow {
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: #22d3ee;
+  box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.2);
+}
+
+/* AOS and Keyframes Fallbacks */
 [data-aos="drop-bounce"] {
   opacity: 0;
 }
@@ -29,22 +147,22 @@ body {
 }
 
 @keyframes dropBounce {
-  0% { transform: translateY(-300px); opacity: 0; }
+  0% { transform: translateY(-200px); opacity: 0; }
   50% { transform: translateY(0); opacity: 1; }
-  65% { transform: translateY(-40px); opacity: 1; }
+  65% { transform: translateY(-20px); opacity: 1; }
   80% { transform: translateY(0); opacity: 1; }
-  90% { transform: translateY(-15px); opacity: 1; }
+  90% { transform: translateY(-8px); opacity: 1; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px) scale(0.98);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 

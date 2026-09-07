@@ -27,7 +27,7 @@ export const socialLinks = {
 };
 
 export const heroContent = {
-  greeting: "Hi, I'm Abhishek Dongre",
+  greeting: "Hi, I'm Abhishek",
   titleHighlight: "Data Analyst & Full Stack Developer",
   subtitle:
     "I build Data Analytics projects, Full-stack web applications, and intelligent AI-powered solutions.",

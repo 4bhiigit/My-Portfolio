@@ -1,74 +1,59 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { softSkillsList } from '../data/portfolioData';
 
-const SoftSkillCard = ({ skill, index }) => (
-  <div 
-    data-aos="fade-up"
-    data-aos-delay={index * 100}
-    className="bg-[#f8f8f8] border border-gray-200 rounded-3xl p-6 hover:scale-[1.03] hover:bg-white hover:border-[#ff2a2a]/30 hover:shadow-[0_20px_45px_rgba(255,42,42,0.08)] transition-all duration-500 group flex flex-col items-center text-center justify-between min-h-[220px]"
-  >
-    <div className="flex flex-col items-center">
-      <div className="text-4xl mb-4 p-3 bg-gray-100 rounded-2xl group-hover:bg-[#ff2a2a]/10 group-hover:scale-110 transition-all duration-300">
-        {skill.icon}
-      </div>
-      <h3 className="text-gray-900 text-lg font-black tracking-tight mb-2 uppercase">
-        {skill.name}
-      </h3>
-      <p className="text-gray-500 text-sm font-medium leading-relaxed">
-        {skill.desc}
-      </p>
-    </div>
-  </div>
-);
-
 const SoftSkills = () => {
-  const [showAll, setShowAll] = useState(false);
-
   return (
-    <section id="softskills" className="bg-white pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:60px_60px]">
-      
-      {/* Top paper divider (torn SVG transition from dark section) */}
-      <div className="absolute top-0 left-0 w-full pointer-events-none z-10 transform -translate-y-[1px] rotate-180">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 md:h-20 fill-[#0a0a0a]">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.62,189.5,99.8,242.79,81.82,282.88,63.6,321.39,56.44Z"></path>
-        </svg>
-      </div>
+    <section id="softskills" className="relative py-28 px-6 md:px-12 bg-[#06080f] overflow-hidden">
+      {/* Background Decorative Grids */}
+      <div className="absolute inset-0 cyber-grid opacity-15 pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto relative z-20">
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header */}
-        <div data-aos="fade-up" className="mb-16 md:mb-20 text-center">
-          <div className="inline-block border border-gray-300 rounded-full px-5 py-1.5 text-sm text-gray-600 font-bold mb-6 shadow-sm bg-white">
-            Core Competencies
+        <div data-aos="fade-up" className="max-w-3xl mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono mb-3">
+            <span>● 08</span>
+            <span>CORE COMPETENCIES</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-4 uppercase">
-            Professional Soft Skills
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight mb-4">
+            Professional <span className="gradient-text-cyan">Soft Skills</span>
           </h2>
-          <p className="text-gray-500 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
-            Essential traits that make me an effective engineer, coordinator, and communicator.
+          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Essential cognitive and collaborative traits that empower high-velocity engineering, problem decomposition, and team cohesion.
           </p>
         </div>
 
         {/* Soft Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {softSkillsList.slice(0, showAll ? softSkillsList.length : 4).map((skill, index) => (
-            <SoftSkillCard key={skill.name} skill={skill} index={index} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {softSkillsList.map((skill, index) => (
+            <div
+              key={skill.name}
+              data-aos="fade-up"
+              data-aos-delay={index * 80}
+              className="p-6 rounded-2xl bg-[#0b0f19]/80 backdrop-blur-xl border border-white/10 hover:border-cyan-500/40 hover:bg-[#0f172a]/90 shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-cyan-500/10 transition-all">
+                  {skill.icon}
+                </div>
+
+                <h3 className="text-base font-heading font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                  {skill.name}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+                  {skill.desc}
+                </p>
+              </div>
+
+              <div className="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-slate-500">
+                <span>INDEX #0{index + 1}</span>
+                <span className="text-cyan-400/70">ACTIVE</span>
+              </div>
+            </div>
           ))}
         </div>
-
-        {softSkillsList.length > 4 && (
-          <div className="mt-10 flex justify-center">
-            <button
-              onClick={() => setShowAll((prev) => !prev)}
-              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#ff2a2a] text-white font-bold text-base hover:bg-red-600 shadow-[0_15px_35px_rgba(255,42,42,0.25)] transition-all duration-300"
-            >
-              {showAll ? 'Show Less' : 'Show More'}
-              <svg className={`w-4 h-4 transition-transform ${showAll ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-          </div>
-        )}
 
       </div>
     </section>

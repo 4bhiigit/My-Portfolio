@@ -6,11 +6,9 @@ const Preloader = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Wait for the water fill animation (1.5s) + a small pause (0.5s)
-    // before the shutter goes up smoothly.
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2200);
+    }, 1600);
     
     return () => clearTimeout(timer);
   }, []);
@@ -20,33 +18,39 @@ const Preloader = () => {
       {isLoading && (
         <motion.div
           key="preloader"
-          initial={{ y: 0 }}
-          exit={{ y: "-100%" }}
-          transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 w-full h-screen bg-[#ff2a2a] z-[100000] flex items-center justify-center"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0, y: -40 }}
+          transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 w-full h-screen bg-[#06080f] z-[100000] flex flex-col items-center justify-center pointer-events-auto"
         >
-          {/* Logo Container */}
+          {/* Ambient Glow */}
+          <div className="absolute w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Glowing Monogram */}
           <motion.div 
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="relative text-5xl md:text-7xl font-black tracking-tighter"
+            initial={{ scale: 0.85, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 1.1, opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative flex flex-col items-center gap-4 z-10"
           >
-            {/* Background text (empty state) */}
-            <div className="text-red-900/30">
-              {personalInfo.brandName}<span className="text-red-900/30">.</span>
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-heading font-black shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+              A
             </div>
 
-            {/* Foreground text (water fill state) */}
-            <motion.div 
-              className="absolute top-0 left-0 text-white overflow-hidden whitespace-nowrap"
-              initial={{ clipPath: 'inset(100% 0 0 0)' }}
-              animate={{ clipPath: 'inset(0% 0 0 0)' }}
-              transition={{ duration: 1.6, ease: "easeInOut", delay: 0.2 }}
-            >
-              {personalInfo.brandName}<span className="text-black">.</span>
-            </motion.div>
+            <div className="text-center">
+              <h2 className="text-xl font-heading font-bold text-white tracking-tight">
+                {personalInfo.brandName}
+                <span className="text-cyan-400">.</span>
+              </h2>
+              <div className="flex items-center justify-center gap-2 mt-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+                <span className="text-[11px] font-mono tracking-widest text-slate-400 uppercase">
+                  Loading Workspace...
+                </span>
+              </div>
+            </div>
           </motion.div>
-
         </motion.div>
       )}
     </AnimatePresence>
