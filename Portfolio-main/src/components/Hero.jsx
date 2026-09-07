@@ -1,14 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import heroVideo from '../assets/hero video/abhishek-hero.mp4';
 import { heroContent, personalInfo, socialLinks } from '../data/portfolioData';
 
 const Hero = () => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -17,41 +12,18 @@ const Hero = () => {
     });
   }, []);
 
-  const toggleVideo = (e) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-        setIsPlaying(true);
-      } else {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      }
-    }
-  };
-
   return (
     <section id="home" className="relative w-full min-h-screen flex items-center overflow-hidden bg-[#06080f]">
-      {/* Background Video */}
-      <video
-        ref={videoRef}
-        muted={isMuted}
-        playsInline
-        onEnded={() => setIsPlaying(false)}
-        className="absolute top-0 left-0 w-full h-full object-cover [object-position:42%_center] md:[object-position:center] z-0 opacity-40 transition-opacity duration-700 hover:opacity-50"
-      >
-        <source src={heroVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Cyber Overlays & Vignettes */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#06080f] via-[#06080f]/75 to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#06080f] via-transparent to-[#06080f]/80 z-10 pointer-events-none" />
-      <div className="absolute inset-0 cyber-grid opacity-30 z-10 pointer-events-none" />
+      {/* Dynamic Futuristic Canvas & Cyber Grids */}
+      <div className="absolute inset-0 bg-[#06080f]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#06080f]/60 to-[#06080f] z-10 pointer-events-none" />
+      <div className="absolute inset-0 cyber-grid opacity-25 z-10 pointer-events-none" />
+      <div className="absolute inset-0 cyber-grid-dots opacity-20 z-10 pointer-events-none" />
 
       {/* Ambient Glowing Orbs */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 -left-24 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" />
+      <div className="absolute top-1/3 -right-20 w-[450px] h-[450px] bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 left-1/3 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Left Floating Social Dock (Desktop) */}
       <aside aria-label="Social Profiles" className="hidden lg:flex flex-col gap-4 fixed left-6 top-1/2 -translate-y-1/2 z-40 p-2.5 rounded-2xl bg-[#0b0f19]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
@@ -180,34 +152,81 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side: Reel Controls Card */}
+        {/* Right Side: Interactive Developer Telemetry Card */}
         <div 
           data-aos="zoom-in"
           data-aos-delay="400"
-          className="flex flex-col items-center sm:items-start lg:items-end gap-4"
+          className="w-full lg:w-auto flex justify-center lg:justify-end"
         >
-          <div 
-            onClick={toggleVideo}
-            className="group cursor-pointer p-4 rounded-2xl bg-[#0b0f19]/80 backdrop-blur-xl border border-white/10 hover:border-cyan-500/40 shadow-2xl transition-all duration-300 flex items-center gap-4"
-          >
-            <div className="relative w-14 h-14 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] group-hover:scale-105 transition-transform">
-              {!isPlaying ? (
-                <svg className="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                </svg>
-              )}
-            </div>
-            <div className="text-left pr-2">
-              <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-semibold">
-                {!isPlaying ? "Interactive Reel" : "Now Playing"}
-              </p>
-              <p className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">
-                {!isPlaying ? "Play Showcase" : "Click to Pause"}
-              </p>
+          <div className="relative group w-full max-w-md">
+            {/* Outer Glow */}
+            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-cyan-500/25 via-indigo-500/25 to-purple-500/25 blur-xl opacity-75 group-hover:opacity-100 transition duration-500 pointer-events-none" />
+            
+            {/* Console Frame */}
+            <div className="relative rounded-3xl bg-[#0b0f19]/90 backdrop-blur-xl border border-white/10 p-5 shadow-2xl space-y-4">
+              {/* Header Bar */}
+              <div className="flex items-center justify-between pb-3 border-b border-white/5 font-mono text-[11px]">
+                <div className="flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                  <span className="text-slate-400 ml-1">system_node.tsx</span>
+                </div>
+                <span className="text-emerald-400 flex items-center gap-1.5 font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  ONLINE
+                </span>
+              </div>
+
+              {/* Code Snippet / Spec Card */}
+              <div className="font-mono text-xs space-y-2 py-1">
+                <p className="text-slate-500">// Core Candidate Specifications</p>
+                <div className="p-3 rounded-xl bg-[#06080f]/80 border border-white/5 space-y-1.5">
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">candidate:</span>
+                    <span className="text-cyan-300 font-semibold">"{personalInfo.name}"</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">role:</span>
+                    <span className="text-indigo-300">"Full Stack & AI Engineer"</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">education:</span>
+                    <span className="text-slate-200">"B.Tech CSE · 2026 Batch"</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">focus:</span>
+                    <span className="text-emerald-300">"Agentic AI · RAG · Web Apps"</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Live Metric Badges */}
+              <div className="grid grid-cols-3 gap-2 text-center pt-1 font-mono">
+                <div className="p-2 rounded-xl bg-white/[0.03] border border-white/5">
+                  <span className="block text-base font-bold font-heading text-white">4+</span>
+                  <span className="text-[10px] text-slate-400 uppercase tracking-wider">Projects</span>
+                </div>
+                <div className="p-2 rounded-xl bg-white/[0.03] border border-white/5">
+                  <span className="block text-base font-bold font-heading text-cyan-400">16+</span>
+                  <span className="text-[10px] text-slate-400 uppercase tracking-wider">Certs</span>
+                </div>
+                <div className="p-2 rounded-xl bg-white/[0.03] border border-white/5">
+                  <span className="block text-base font-bold font-heading text-indigo-400">LPU</span>
+                  <span className="text-[10px] text-slate-400 uppercase tracking-wider">Campus</span>
+                </div>
+              </div>
+
+              {/* Quick Action Footer */}
+              <a 
+                href="#contact"
+                className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-500/10 to-indigo-600/10 hover:from-cyan-500/20 hover:to-indigo-600/20 border border-cyan-500/20 hover:border-cyan-500/40 text-cyan-300 text-xs font-mono font-medium flex items-center justify-between transition-all duration-200 group/btn"
+              >
+                <span className="flex items-center gap-2">
+                  <span className="text-cyan-400">❯</span> Initiate Connection
+                </span>
+                <span className="text-slate-400 group-hover/btn:translate-x-0.5 transition-transform">→</span>
+              </a>
             </div>
           </div>
         </div>
